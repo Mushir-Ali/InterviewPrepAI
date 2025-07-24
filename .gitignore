@@ -1,0 +1,22 @@
+# Node modules
+node_modules/
+**/node_modules/
+
+# Environment files
+.env
+**/.env
+
+# Build directories
+build/
+dist/
+
+# MacOS system files
+.DS_Store
+
+# Logs
+logs/
+*.log
+
+# VSCode settings (optional)
+.vscode/
+.env
