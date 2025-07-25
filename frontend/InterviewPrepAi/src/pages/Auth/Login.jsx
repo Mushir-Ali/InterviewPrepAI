@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import Input from '../../components/Inputs/Input';
 import {validateEmail} from '../../utils/helper';
-
+import { API_PATHS } from '../../utils/apiPaths';
+import axiosInstance from '../../utils/axiosInstance';
 const Login = ({setCurrentPage}) => {
   const [email,setEmail] = useState("");
   const [password,setPassword] = useState("");
@@ -25,13 +26,22 @@ const Login = ({setCurrentPage}) => {
     setError("");
     // login logic
     try{
-      
-    }
-    catch(err){
-      if(err.response || err.response.data.message){
-        setError(err.response.data.message);
+      const response = await axiosInstance.post(API_PATHS.AUTH.LOGIN, {
+        email,
+        password,
+      });
+
+      const { token } = response.data;
+
+      if (token) {
+        localStorage.setItem("token", token);
+        navigate("/dashboard");
       }
-      else{
+    }
+    catch (err) {
+      if (err.response || err.response.data || err.response.data.message) {
+        setError(err.response.data.message);
+      } else {
         setError("Something went wrong. Please try again.");
       }
     }
