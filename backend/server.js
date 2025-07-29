@@ -13,7 +13,7 @@ const { protect } = require("./middlewares/authMiddleware");
 const { generateInterviewQuestions, generateConceptExplanations } = require("./controllers/aiController");
 app.use(
     cors({
-        origin: "*",
+        origin: "https://interviewprepai-frontend-l7bw.onrender.com",
         methods: "GET,PUT,POST,DELETE",
         allowedHeaders: ["Content-Type", "Authorization"],
     })
