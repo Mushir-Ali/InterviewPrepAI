@@ -24,7 +24,7 @@ const generateInterviewQuestions = async (req, res) => {
         const response = await result.response;
 
         const rawText = await response.text(); // ✅ FIXED: Await this!
-        console.log("Gemini raw response:", rawText);
+        // console.log("Gemini raw response:", rawText);
 
         const cleanedText = rawText
             .replace(/^```json\s*/, "")
@@ -64,7 +64,7 @@ const generateConceptExplanations = async (req, res) => {
     const response = await result.response;
 
     const rawText = await response.text();
-    console.log("Gemini raw explanation response:", rawText);
+    // console.log("Gemini raw explanation response:", rawText);
 
     // Try to extract JSON string inside code block
     let cleanedText = rawText.trim();

@@ -26,7 +26,7 @@ const Dashboard = () => {
   const fetchAllSessions = async () => {
     try{
       const response = await axiosInstance.get(API_PATHS.SESSION.GET_ALL);
-      console.log("sessions are ",response.data );
+      // console.log("sessions are ",response.data );
       setSessions(response.data);
     }
     catch(error){

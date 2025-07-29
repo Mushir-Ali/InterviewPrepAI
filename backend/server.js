@@ -10,7 +10,7 @@ const authRoutes = require("./routes/authRoutes");
 const sessionRoutes = require("./routes/sessionRoutes");
 const questionRoutes = require("./routes/questionRoutes");
 const { protect } = require("./middlewares/authMiddleware");
-const { generateInterviewQuestions, generateConceptExplanation, generateConceptExplanations } = require("./controllers/aiController");
+const { generateInterviewQuestions, generateConceptExplanations } = require("./controllers/aiController");
 app.use(
     cors({
         origin: "*",
