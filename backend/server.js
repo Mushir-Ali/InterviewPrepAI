@@ -12,12 +12,13 @@ const questionRoutes = require("./routes/questionRoutes");
 const { protect } = require("./middlewares/authMiddleware");
 const { generateInterviewQuestions, generateConceptExplanations } = require("./controllers/aiController");
 app.use(
-    cors({
-        origin: "https://interviewprepai-frontend-l7bw.onrender.com",
-        methods: "GET,PUT,POST,DELETE",
-        allowedHeaders: ["Content-Type", "Authorization"],
-    })
+  cors({
+    origin: "https://interviewprepai-frontend-l7bw.onrender.com",
+    methods: "GET,PUT,POST,DELETE",
+    credentials: true, // 🔴 Add this
+  })
 );
+
 
 connectDB();
 
