@@ -5,10 +5,12 @@ import {Toaster} from 'react-hot-toast';
 import LandingPage from './pages/LandingPage';
 import Dashboard from './pages/Home/Dashboard';
 import InterviewPrep from './pages/InterviewPrep/InterviewPrep';
+import UserProvider from './context/userContext';
 
 
 const App = () => {
   return (
+    <UserProvider>
     <div>
       <Router>
         <Routes>
@@ -17,7 +19,7 @@ const App = () => {
           {/* <Route path='/login' element={<Login />} />
           <Route path='/signUp' element={<SignUp />} /> */}
           <Route path='/dashboard' element={<Dashboard />} />
-          <Route path='/interview-pep/:sessionId' element={<InterviewPrep />} />
+          <Route path='/interview-prep/:sessionId' element={<InterviewPrep />} />
         </Routes>
       </Router>
 
@@ -30,6 +32,7 @@ const App = () => {
       }}
       />
     </div>
+    </UserProvider>
   )
 }
 

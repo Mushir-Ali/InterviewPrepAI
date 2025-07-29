@@ -5,21 +5,26 @@ Task:
 - Role: ${role}
 - Candidate Experience: ${experience} years
 - Focus Topics: ${topicsToFocus}
-- Write ${numberOfQuestions} interview questions.
-- For each question, generate a detailed but beginner-friendly answer.
-- If the answer needs a code example, add a small code block inside.
-- Keep formatting very clean.
-- Return a pure JSON array like:
+- Write ${numberOfQuestions} technical interview questions.
+- For each question, generate a clear and beginner-friendly answer.
+- If the answer requires a code example, include the code as a plain string inside the "answer" field.
+  For example:
+  "answer": "You can create a server using Express like this: const app = express();"
+
+Return only a valid JSON array.
+Do NOT use markdown or wrap anything in backticks (like \`\`\`).
+Do NOT add any explanation or extra formatting.
+
+Return output ONLY like this:
+
 [
   {
-    "question": "Question here?",
-    "answer": "Answer here."
-  },
-  ...
+    "question": "Explain the concept of closures in JavaScript.",
+    "answer": "A closure gives you access to an outer function’s scope from an inner function. For example: function outer() { let x = 10; return function inner() { console.log(x); }; }"
+  }
 ]
-
-Important: Do NOT add any extra text. Only return valid JSON.
 `);
+
 
 
 const conceptExplainPrompt = (question) => `
