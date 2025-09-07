@@ -124,8 +124,12 @@ const LandingPage = () => {
         </div>
 
         <div className='text-sm bg-gray-50 text-secondary text-center p-5 mt-5'>
-          Made with ❤️... Happy Coding
+          Made with ❤️ by{" "}
+          <a href="https://your-link-here.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+            Mushir Ali
+          </a>
         </div>
+
       </div>
 
 
